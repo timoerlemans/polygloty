@@ -19,15 +19,28 @@ document.addEventListener("DOMContentLoaded", () => {
     const i18n = parseToJson(rawTranslations);
     const defaultLanguage = i18n["defaultLanguage"] || 'en';
 
+    const translateItem = (item, resourceString, language) => {
+        if (!i18n || !i18n[language] || !i18n[language][resourceString]) {
+            if (i18n[defaultLanguage] && i18n[defaultLanguage][resourceString]) {
+                return i18n[defaultLanguage][resourceString];
+            }
+
+            if (item.innerHTML) {
+                return item.innerHTML;
+            }
+
+            return  resourceString;
+        }
+
+        return i18n[language][resourceString];
+    }
+
     itemsToTranslate.forEach(item => {
         const resourceString = item.getAttribute("data-translate");
         const language = item.getAttribute("data-lang") || defaultLanguage;
 
-        if (!i18n || !i18n[language] || !i18n[language][resourceString]) {
-            item.innerHTML = resourceString;
-            return;
-        }
-
-        item.innerHTML = i18n[language][resourceString];
+        item.innerHTML = translateItem(item, resourceString, language);
+        item.removeAttribute('data-translate');
+        item.removeAttribute('data-lang');
     });
 });
