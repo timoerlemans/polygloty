@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <script id="translations" type="application/json">
+        {
+            "defaultLanguage": "nl",
+            "nl": {
+                "WEBSITE.HEADER.TITLE": "Welkom op mijn website",
+                "WEBSITE.BODY.FIRST_PARAGRAPH": "Mijn naam is Tim, en dit is mijn website."
+            },
+            "en": {
+                "WEBSITE.HEADER.TITLE": "Welcome to my web site",
+                "WEBSITE.BODY.FIRST_PARAGRAPH": "My name is Tim, and this is my web site."
+            },
+            "de": {
+                "WEBSITE.HEADER.TITLE": "Willkommen auf meiner Website",
+                "WEBSITE.BODY.FIRST_PARAGRAPH": "Mein Name ist Tim, und dies ist meine Website."
+            }
+        }
+    </script>
+  <script type="text/javascript" src="/index.js"></script>
+</head>
+<body>
+<h1 data-translate="WEBSITE.HEADER.TITLE"></h1>
+<p data-translate="WEBSITE.BODY.FIRST_PARAGRAPH" data-lang="en"></p>
+<p>Auf deutsch: <span data-translate="WEBSITE.BODY.FIRST_PARAGRAPH" data-lang="de"></span></p>
+<p>Chinese: <span data-translate="WEBSITE.BODY.FIRST_PARAGRAPH" data-lang="cn"></span></p>
+</body>
+</html>
