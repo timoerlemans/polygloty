@@ -1,5 +1,5 @@
 # Polygloty
-A tiny i18n (internationalization) script that's written in JavaScript and doesn't have any dependencies.
+A tiny i18n (internationalization) script that's written in vanilla JavaScript and doesn't have any dependencies.
 
 ## Usage
 
