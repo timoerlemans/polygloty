@@ -51,7 +51,7 @@ Output:
 <h1>Welkom op mijn website</h1>
 <p>My name is Tim, and this is my web site.</p>
 <p>Auf deutsch: <span>Mein Name ist Tim, und dies ist meine Website.</span></p>
-<p>Chinese: <span>Mijn naam is Tim, en dit is mijn website.</span></p>
+<p>Chinese: <span>Mijn naam is Tim, en dit is mijn website.</span></p> <!-- "cn" does not exist so it falls back to the default language, which is "nl" -->
 ```
 
 Note: If `data-lang` is used, but the language or translation string in that language does not exist, the default language will be used.
