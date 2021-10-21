@@ -1,5 +1,5 @@
-# polygloty
-A simple framework-agnostic i18n script without needing any dependencies.
+# Polygloty
+A tiny i18n (internationalization) script that's written in JavaScript and doesn't have any dependencies.
 
 ## Usage
 
