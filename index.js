@@ -2,7 +2,6 @@ const parseToJson = (data) => {
     try {
         return JSON.parse(data);
     } catch (error) {
-        console.error(error);
         return {};
     }
 }
@@ -24,10 +23,11 @@ document.addEventListener("DOMContentLoaded", () => {
         const resourceString = item.getAttribute("data-translate");
         const language = item.getAttribute("data-lang") || defaultLanguage;
 
-        if (!i18n[language]) {
+        if (!i18n || !i18n[language] || !i18n[language][resourceString]) {
             item.innerHTML = resourceString;
+            return;
         }
 
-        item.innerHTML = i18n[language][resourceString] || resourceString;
+        item.innerHTML = i18n[language][resourceString];
     });
 });
